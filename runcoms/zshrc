@@ -31,8 +31,8 @@ function chpwd() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-. $HOME/.asdf/asdf.sh
+. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
-. $HOME/.asdf/completions/asdf.bash
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
