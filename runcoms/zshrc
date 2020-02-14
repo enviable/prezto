@@ -19,10 +19,18 @@ fi
 
 # Customize to your needs...
 
+alias docker-pause='docker pause $(/usr/local/bin/docker ps -f status=running -q)'
+alias docker-unpause='docker unpause $(/usr/local/bin/docker ps -f status=paused -q)'
+alias dup='docker-compose up'
+alias de='docker-compose exec'
+alias dew='docker-compose exec web'
+alias code='code-insiders'
 alias gco='git checkout'
 alias gst='git status'
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
+
+alias download-udemy="youtube-dl --cookies ~/code/udemy/udemy-cookies.txt -o './%(playlist_title)s/%(chapter_number)s - %(chapter)s - %(playlist_index)s - %(title)s.%(ext)s'"
 
 function chpwd() {
 	pwd >| ~/.whereami
