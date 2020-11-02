@@ -24,6 +24,11 @@ alias gst='git status'
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
 
+alias dup='docker-compose up'
+alias de='docker-compose exec'
+
+alias be='bundle exec'
+
 function chpwd() {
 	pwd >| ~/.whereami
 }
@@ -33,8 +38,15 @@ function chpwd() {
 
 . $HOME/.asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/completions/asdf.bash
+export AWS_OKTA_BACKEND=pass
 
 export PATH="/snap/bin:$PATH"
 
+export GOPATH=$HOME/code/go
+export PATH=$PATH:$GOPATH/bin
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+export PATH=$PATH:'/mnt/c/Program Files/Docker/Docker/resources/bin'
+alias code='/mnt/c/Users/enviable/AppData/Local/Programs/Microsoft\ VS\ Code\ Insiders/bin/code-insiders'
+
+source <(kubectl completion zsh)

@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -66,4 +66,6 @@ fi
 # SSH
 #
 
-eval `keychain --agents ssh --eval id_rsa`
+#eval `keychain --agents ssh --eval id_rsa`
+eval `keychain --agents ssh,gpg --eval id_rsa C459DE4491DF1D6D974E8C18FFC34677F05C029E`
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
